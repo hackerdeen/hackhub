@@ -1,0 +1,36 @@
+<html>
+<head>
+<title>hackhub &raquo; {% block title %}{% endblock %}</title>
+<link href="//hackerdeen.org/static/stylesheets/rowan.css" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+{% if status %}
+   <p id="status" class="{% if status.open %}open{% else %}closed{% endif %}">
+   The space is 
+   <a href="/hub/status">{% if status.open %}open{% else %}closed{% endif %}</a>
+   </p>
+{% else %}
+<!-- There is no status. This is odd. -->
+{% endif %}
+<h1>HackHub</h1>
+<ul id="navbar">
+<li><a href="/hub/">Home</a></li>
+<li><a href="/hub/profile">Profile</a></li>
+<li><a href="/hub/payments">Payments</a></li>
+<li><a href="/hub/status">Space Status</a></li>
+<li><a href="/hub/door">Unlock Door</a></li>
+<li><a href="/hub/logout">Logout</a></li>
+</ul>
+</div>
+<div id="content">
+{% block content %}{% endblock %}
+</div>
+<div id="footer">
+<p>Powered by HackHub. <a href="/hub/admin">Admin section</a>.</p>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Profile &raquo; Edit{% endblock %}
+{% block content %}
+<h2>Edit {{ profile.username }}'s Profile</h2>
+<form action="/hub/admin/profile" method="post">
+<table>
+<tr><th>Username</th><td><input type="hidden" name="username" value="{{ profile.username }}" />{{ profile.username }}</td></tr>
+<tr><th>Realname</th><td><input type="text" name="realname" value="{{ profile.realname }}" /></td></tr>
+<tr><th>Nickname</th><td><input type="text" name="nickname" value="{{ profile.nickname }}" /></td></tr>
+<tr><th>Email</th><td><input type="text" name="email" value="{{ profile.email }}" /></td></tr>
+<tr><th>IRC Handle</th><td><input type="text" name="irc" value="{{ profile.irc }}" /></td></tr>
+<tr><th>Twitter Username</th><td><input type="text" name="twitter" value="{{ profile.twitter }}" /></td></tr>
+<tr><th>Github Username</th><td><input type="text" name="github" value="{{ profile.github }}" /></td></tr>
+<tr><th>Address</th><td>{{ profile.address }}</td></tr>
+</table>
+<p><input type="submit" class="submit" value="Save Changes" /><input type="button" onclick="javascript:history.back();" value="Cancel" /></p>
+</form>
+<p class="info">{{ profile.username }} is {% if profile.key == 0 %} <b>not</b>{% endif %} a keyholder.</p>
+<p class="info">{{ profile.username }} is {% if profile.adm == 0 %} <b>not</b>{% endif %} an administrator.</p>
+{% endblock %}

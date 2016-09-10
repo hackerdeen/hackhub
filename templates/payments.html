@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>My Payments</h2>
+<p>The following payments have been recorded:</p>
+<table>
+<tr><th>Month</th><th>Year</th><th>Recorded at</th><th>Recorded by</th></tr>
+{% for payment in payments if payment %}
+<tr><td>{{ payment[1] }}</td><td>{{ payment[0] }}</td><td>{{ payment[2]|ts2readable }}</td><td>{{ payment[3] }}</td>
+{% else %}
+<p>No payments?</p>
+<p>{{ payments }}</p>
+{% endfor %}
+</table>
+<p>If you haven't already you can <a href="/hub/setup_payment">set up a standing order.</a></p>
+{% endblock %}
+

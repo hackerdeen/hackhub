@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+
+  <title>Hackerdeen &raquo; {% block title %}{% endblock %}</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!--[if lt IE 9]>
+	<script src="http://hackerdeen.org/static/javascripts/html5shiv.js"></script>
+	<![endif]-->
+  <link rel="stylesheet" href="http://hackerdeen.org/static/stylesheets/style.css">
+  <link rel="stylesheet" href="http://hackerdeen.org/static/stylesheets/normalize.css">
+	<link rel="stylesheet" href="http://hackerdeen.org/static/stylesheets/skeleton.css">
+	<script type="text/javascript" src="http://hackerdeen.org/static/javascripts/prefixfree.min.js"></script>
+
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+	<script type="text/javascript" src="http://hackerdeen.org/static/javascripts/jquery.min.js"></script>
+	<script type="text/javascript" src="http://hackerdeen.org/static/javascripts/main.js"></script>
+
+	<!-- SEO -->
+	<meta name="Description" content="Hackerdeen is physical space where people with certain interests e.g. computer science, engineering, design, photography etc. get together to work on interesting projects, create and listen to presentations of others and meet new interesting people." />
+	<meta name="robots" content="all,index,follow" />
+	<meta name="author" content="Hackerdeen [ http://hackerdeen.org/ ]" />
+	<meta name="revisit-after" content="7 days" />
+	<meta name="content-language" content="en" />
+</head>
+
+<body>
+	<div class="container clearfix">
+
+	<header id="top-header">
+		<aside class="six columns" id="header-logo">
+			<a href="/" class="logo"></a>
+			<h1 class="clearfix"><a href="/">hacker<span style="color: #178C75;">deen</span></a></h1>
+		</aside>
+
+		<section class="one-third column" id="header-menu">
+		<nav id="main-nav" class="centered">
+			<ul id="menu">
+				<li><a href="/">Home</a></li>
+				<li><a href="/about-us/">About us</a></li>
+				<li><a href="/contact-us/">Contact us</a></li>
+			</ul>
+		</nav>
+		</section>
+
+		<!--<aside class="one-third column omega" id="header-irc">
+			<p class="centered block-irc">Come and talk to us on Internet Relay Chat (IRC) on <span>#hackerdeen</span> channel on <span>irc.freenode.net</span> server.</p>
+		</aside>-->
+		<aside class="one-third column omega" id="header-irc">
+      <style>
+        #status {
+          color: white;
+          text-decoration: underline;
+        }
+
+        #status:hover {
+          text-decoration: none;
+        }
+      </style>
+			<p class="centered block-irc">Current status is<br /><a href="http://spacestatus.bastinat0r.de/#hackerdeen" target="_blank" id="status">loading...</a><br />with message<br /><span id="status-message">loading...</span></p>
+		</aside>
+	</header>
+
+	</div>
+		
+	
+<div class="container clearfix">
+  <section class="fourteen columns offset-by-two">
+    {% block content %}{% endblock %}
+  </section>
+
+  <div class="sixteen columns">
+	  <img src="http://hackerdeen.org/static/images/network@2.png" class="center" width="128" height="128" style="margin-top: 2em;" />
+  </div>
+</div>
+
+	<div id="footer">
+
+		<div class="container clearfix">
+			<footer>
+			  <aside class="one-third column">
+					<p class="copy">&copy; 2013 &nbsp;Hackerdeen<br /><a href="/hub/">Members Area</a></p>
+				</aside>
+
+				<section id="footer-address" class="one-third column">
+				  <p>3rd floor<br/>
+          35a Union Street<br/>
+				  AB11 5BN Aberdeen<br/>
+          United Kingdom
+				  </p>
+        </section>
+
+        <aside id="footer-social" class="one-third column">
+          <p>Join IRC channel <span>#hackerdeen</span> on <span>irc.freenode.net</span><br/><br/>
+          Join discussion on <a href="https://groups.google.com/forum/#!forum/hackerdeen">Google Groups</a><br/>
+					Folow us on <a href="https://twitter.com/hackerdeen">Twitter</a><br/>
+					Folow us on <a href="https://plus.google.com/112503671338726985630" rel="publisher">Google+</a><br />
+          Subscribe to <a href="/blog/rss/">RSS</a></p>
+        </aside>
+			</footer>
+		</div>
+
+	</div>
+</body>
+</html>
+

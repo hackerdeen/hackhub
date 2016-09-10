@@ -1,0 +1,150 @@
+body {
+	font-family: Arial, sans-serif;
+	color: grey;
+	background: #000;
+	border: 3px double #333;
+	padding: 10px;
+}
+body a {
+	color: #f00;
+}
+
+#wrapper
+{
+	width:80%;
+	margin: 0 auto;
+}
+
+#header{
+	position: relative;
+}
+#status{
+	/*float:right;*/
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-style:italic;
+}
+/*ul{ display: inline; list-item-style: none; padding: 0; margin: 0; }*/
+
+/**NAVIGATION**/
+ul#navbar
+{ border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+	text-align:center;
+}
+
+ul#navbar li { display: inline; }
+ul#navbar a { 
+	display: inline-block; 
+	text-decoration:none;
+	text-align:center;
+	padding: 1em 1em 1em 0;
+	}
+	
+ul#navbar>li>a:hover{
+	text-decoration:underline;
+}
+.active
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+
+#profileBody #home_page a
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+#profileBody #profile_page a
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+#profileBody #payments_page a
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+#profileBody #status_page a
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+#profileBody #account_page a
+{
+	font-weight:700;
+	text-decoration:underline!important;
+}
+
+/*CONTENT*/
+
+h1{
+	text-align:center;
+}
+
+h2{
+	/*border-bottom: 2px solid red;*/
+	border-bottom: 3px double #333;
+}
+table{
+	border:none;
+	margin-bottom:2em;
+}
+th, td{
+	padding:0.5em;
+}
+
+th {
+	/*border-bottom: 2px solid red;*/
+	text-align:right!important;
+}
+
+.info{
+	font-style:italic;
+}
+
+input
+{
+	background: grey;
+}
+.submit {
+	 color: #fff;
+	
+	 /*border: none;*/
+	padding:0.5em;
+	background: #0c0; 
+}
+
+#footer {
+	margin-top: 10px;
+	border-top: 3px double #333;
+	font-size: x-small;
+}
+
+#message {
+    width: 40em;
+}
+
+.payment {
+    display: inline-block;
+    color: black;
+    padding: .5em;
+}
+
+.now {
+    background-color: #C6CACC;
+}
+
+.paid {
+    background-color: #99ED8E;
+}
+
+.gap {
+    background-color: #E86471;
+}
+
+.prejoin {
+    background-color: #6E8A84;
+}

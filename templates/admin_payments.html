@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Members payments{% endblock %}
+{% block content %}
+<h2>Membership payments</h2>
+<table>
+<tr><th>Payment ID</th><th>User</th><th>Month</th><th>Year</th><th>Recorded at</th><th>Recorded by</th></tr>
+{% for p in payments %}
+<tr>
+	<td>{{ p.0 }}</td>
+	<td>{{ p.1 }}</td>
+	<td>{{ p.2 }}</td>
+	<td>{{ p.3 }}</td>
+	<td>{{ p.4|ts2readable }}</td>
+	<td>{{ p.5}}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

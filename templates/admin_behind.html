@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Members behind on payments{% endblock %}
+{% block content %}
+<h2>Candidates for dismemberment</h2>
+<p>The following members don't have payments logged for the current or two previous months:</p>
+<table>
+<tr><th>Username</th><th>Real Name</th><th>Email</th><th>Last payment</th></tr>
+{% for member in behind %}
+<tr>
+	<td><a href="/hub/admin/profile?u={{ member.0 }}">{{ member.0 }}</a></td>
+	<td>{{ member.1 }}</td>
+	<td>{{ member.2 }}</td>
+	<td>{{ member.3 }}/{{ member.4 }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}

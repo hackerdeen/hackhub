@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Apply For Membership{% endblock %}
+{% block content %}
+<h2>Apply For Membership</h2>
+<form action="/hub/apply-for-membership" method="post">
+<table>
+<tr><th>Realname</th><td><input type="text" name="realname" /></td></tr>
+<tr><th>Nickname</th><td><input type="text" name="nickname" /></td></tr>
+<tr><th>Email</th><td><input type="text" name="email" /></td></tr>
+<tr><th>Address</th><td><input type="text" name="address" /></td></tr>
+</table>
+<p><input type="submit" class="submit" value="Apply" /></p>
+</form>
+{% endblock %}

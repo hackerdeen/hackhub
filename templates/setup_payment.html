@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block title %}Setup payment{% endblock %}
+{% block content %}
+<h2>Setup Payment</h2>
+
+<p>We accept payments to our bank account via standing order.</p>
+
+<p>We're still working out the exact details of how to handle these
+payments. The current plan involves manually checking the accont for
+incoming payments and then recording them so there will be a delay
+between your payment hitting our account and that being reflected here
+in hackhub. We intend to do checks of the account at least twice a
+month, around the middle and end of the month.</p>
+
+<p>Money landing in our account without a reference can't be
+associated with a member so will be considered a donation. Transfers
+to cover membership fees <strong>must</strong> include your username as
+the reference.</p>
+
+<h3>Details</h3>
+
+<p>We have  <a href="/hub/so_form">a handy form</a> you can print, fill
+in your details on the dotted lines and give to your bank to set up
+the standing order. Please let us know if your bank has any problems
+with this form and we can hopefully get them ironed out.</p>
+
+<p>If you're setting things up without using <a href="/hub/so_form">
+the handy form</a> the details you need are:</p>
+
+<table>
+<tr> 
+     <td>Account name</td>
+     <td>{{ bank.act_name }}</td>
+</tr>
+<tr>
+  <td>Account number</td>
+  <td>{{ bank.act_number }}</td>
+</tr>
+<tr>
+  <td>Sort code</td>
+  <td>{{ bank.sort_code }}</td>
+</tr>
+<tr>
+  <td>Payment reference</td>
+  <td>{{ member.username }}</td>
+</tr>
+<tr>
+  <td>Payment</td>
+  <td>£20.00 <strong>monthly</strong> on/soon after the 1st of every month</td>
+</tr>
+</table>
+
+{% endblock %}
+  

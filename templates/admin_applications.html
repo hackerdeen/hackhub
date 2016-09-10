@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Membership Applications{% endblock %}
+{% block content %}
+<h2>Membership Applications</h2>
+<table>
+<tr><th>Username</th>
+    <th>Real Name</th>
+    <th>Nickname</th>
+    <th>Email</th>
+    <th>Address</th>
+    <th></th>
+</tr>
+{% for application in applications %}
+<tr>
+	<td>{{ application['username'] }}</td>
+	<td>{{ application.realname }}</td>
+	<td>{{ application.nickname }}</td>
+	<td>{{ application.email }}</td>
+	<td>{{ application.address }}</td>
+	<td>
+	<form action="/hub/admin/applications" method="post">
+	<input type="hidden" name="id" value="{{ application.id }}" />
+	<input type="submit" value="Accept application" class="submit"/>
+	</form>
+	</td> 
+</tr>
+{% endfor %}
+</table>
+{% endblock %}
