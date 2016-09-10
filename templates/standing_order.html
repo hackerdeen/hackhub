@@ -1,0 +1,35 @@
+<html>
+<head>
+<title>57North Standing Order</title>
+<link href="//hackerdeen.org/static/stylesheets/so_form.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1>New Standing Order Instruction</h1>
+<p>Please set up the following standing order and debit my/our account accordingly</p>
+
+<h2>Account details</h2>
+<p class="incomplete">Account Name:</p>
+<p class="incomplete">Account holding branch:</p>
+<p class="incomplete">Account number:</p>
+<p class="incomplete">Sort code:</p>
+
+<h2>Payee details</h2>
+<p>Account name: {{ bank.act_name }}</p>
+<p>Payment ref: {{ member.username }}</p>
+<p>Account number: {{ bank.act_number }}</p>
+<p>Sort code: {{ bank.sort_code }}</p>
+
+<h2>Payment</h2>
+<p>Pay <strong>monthly</strong> on/soon after the 1st of every month</p>
+<p>£20.00</p>
+<p>until further notice.</p>
+
+<h2>Confirmation</h2>
+<p>Customer Signature(s):</p>
+<p class="incomplete"> </p>
+<p class="incomplete">Date:</p>
+
+</body>
+</html>
+
+

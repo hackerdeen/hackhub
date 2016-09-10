@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Email Preferences</h2>
+{% for e in events %}
+<p>When {{ e.1 }} you <strong>{% if uprefs[e.0] %}will{% else %}wont{% endif %}</strong> receive an email. <a href="/hub/profile/email_toggle/{{ e.0 }}">Change this</a></p>
+{% endfor %}
+{% endblock %}

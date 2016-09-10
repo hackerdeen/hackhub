@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Space Status &raquo; Update{% endblock %}
+{% block content %}
+<script src="/static/jquery.js" > </script>
+<script>
+function newMessage() {
+$.getJSON("/api/wisdom", function(data) {
+$("#message").val(data.wisdom);
+});}
+</script>
+
+<h2>Space Status &raquo; Update</h2>
+<form action="#" method="post">
+<table>
+<tr><th>New State</th><td><select name="state">
+<option value="1">Open</option>
+<option value="0" {% if status.open %}selected="selected"{% endif %}>Closed</option>
+</td></tr>
+<tr><th>Message</th><td><input type="text" name="message" id="message"/><a onclick="newMessage()" href="#">Generate a message</a>
+</td></tr>
+</table>
+<p><input type="submit" class="submit" value="Update Status" /></p>
+
+{% endblock %}

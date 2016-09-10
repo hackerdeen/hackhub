@@ -1,0 +1,3 @@
+LDAP_PASSWORD = "" # LDAP bind password
+SECRET_KEY = "" # Some random data
+EMAIL_LIST_PATH = "" # URL path to the email list

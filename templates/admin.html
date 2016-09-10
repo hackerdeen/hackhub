@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Admin Things</h2>
+<p><a href="/hub/admin/behind">Folks behind on dues</a></p>
+<p><a href="/hub/admin/gaps">Payment gaps</a></p>
+<p><a href="/hub/admin/payment_dashboard">Payment dashboard</a></p>
+<p>The following {{ num_members }} members currently exist:</p>
+<table>
+<tr><th>Username</th>
+    <th>Real Name</th>
+    <th>Paid</th>
+    <th>Edit</th>
+    <th>Payment History</th>
+    <th>Payment for other time</th>
+</tr>
+{% for member in members %}
+<tr>
+	<td>{{ member.profile.username }}</td>
+	<td>{{ member.profile.realname }}</td>
+	<td>
+		{% if member.is_paid() %}
+		Paid
+		{% else %}
+		<form action="/hub/admin/payment" method="post">
+		<input type="hidden" name="username" value="{{ member.username }}" />
+		<input type="submit" value="Mark Paid" class="submit"/>
+		</form>
+		{% endif %}
+	</td>
+	<td>
+		<a href="/hub/admin/profile?u={{ member.username }}">Edit</a>
+	</td>
+	<td>
+		<a href="/hub/admin/payment_hist?u={{ member.username }}">Payment History</a>
+	</td>
+	<td>
+	<form action="/hub/admin/payment" method="POST">
+	<input type="hidden" name="username" value="{{ member.username }}" />
+	Year:<input name="year" style="width:5em"/>
+	Month:<input name="month" style="width:3em" />
+	<input type="submit" value="Add payment" class="submit"/>
+	</form>
+	</td> 
+</tr>
+{% endfor %}
+</table>
+{% endblock %}

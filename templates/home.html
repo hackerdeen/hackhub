@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Home</h2>
+<p>Welcome {{ profile.username }}! The space is currently <a href="/hub/status">{% if status.open %}open{% else %}closed{% endif %}</a>.</p>
+<p class="info {% if not paid %}alert{% endif %}">You have {% if not paid %}<strong>not</strong>{% endif %} been marked as paid for this month.</p>
+<p>If you haven't already you can <a href="/hub/setup_payment">set up a standing order.</a></p>
+<p>Your username is {{ username }}</p>
+<p>Your payment history:
+  {% for month in payment_history %}
+  <div class="payment {{ month.3 }}">{{ month.2 }}</div>
+  {% endfor %}
+</p>
+<p>Key: <div class="payment now">Pending</div>
+  <div class="payment paid">Paid</div>
+  <div class="payment gap">Not paid</div>
+  <div class="payment prejoin">Before you joined</div>
+</p>
+{% endblock %}

@@ -1,0 +1,510 @@
+dn: dc=hackerdeen,dc=org
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+o: hackerdeen.org
+dc: hackerdeen
+
+dn: cn=admin,dc=hackerdeen,dc=org
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+description: LDAP administrator
+userPassword:: e3NoYX1LcFdUTUt2alo4dUJXdjJXV2VxbVlNOHQ2L1U9
+
+dn: ou=people,dc=hackerdeen,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: people
+
+dn: ou=group,dc=hackerdeen,dc=org
+objectClass: organizationalUnit
+objectClass: top
+ou: group
+
+dn: cn=active,ou=group,dc=hackerdeen,dc=org
+gidNumber: 5001
+cn: active
+objectClass: posixGroup
+objectClass: top
+
+dn: cn=inactive,ou=group,dc=hackerdeen,dc=org
+gidNumber: 5002
+cn: inactive
+objectClass: posixGroup
+objectClass: top
+
+dn: uid=irl,ou=people,dc=hackerdeen,dc=org
+uid: irl
+gidNumber: 5001
+cn: Iain R. Learmonth
+homeDirectory: /home/irl
+objectClass: account
+objectClass: top
+objectClass: posixAccount
+uidNumber: 1001
+userPassword:: e3NzaGF9V3drQW9DZEtELzBRa2loVlNZdFRHRjkyNlkwZTQzOU1Ia1dFWnc9PQ=
+ =
+
+dn: uid=malcolm,ou=people,dc=hackerdeen,dc=org
+cn: Malcolm Still
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1002
+gidNumber: 5002
+homeDirectory: /home/malcolm
+uid: malcolm
+userPassword:: e1NTSEF9d0ZjZzhJMU1SektKZkR6YUpRWHhxV1RiMi9aOHp0eG4=
+
+dn: uid=coward,ou=people,dc=hackerdeen,dc=org
+cn: Callum Coward
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Y293YXJkMTE=
+uidNumber: 1003
+gidNumber: 5002
+homeDirectory: /home/coward
+uid: coward
+
+dn: uid=adventureloop,ou=people,dc=hackerdeen,dc=org
+cn: Tom Jones
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1004
+gidNumber: 5002
+homeDirectory: /home/adventureloop
+uid: adventureloop
+userPassword:: e1NTSEF9aUM4R3hJby9hTXVLd1Fpc2pQeFVVbjRVUTBiYjZRM0o=
+
+dn: uid=stepan,ou=people,dc=hackerdeen,dc=org
+cn: Stepan Bujnak
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1005
+gidNumber: 5002
+homeDirectory: /home/stepan
+uid: stepan
+userPassword:: e1NTSEF9MUFGSWVQcGt4cnp0SUJTUkdlWk5XZVAvTmp1L0VLWnM=
+
+dn: uid=lea,ou=people,dc=hackerdeen,dc=org
+cn: Lea Bohacova
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: bGVhMDg=
+uidNumber: 1006
+gidNumber: 5002
+homeDirectory: /home/lea
+uid: lea
+
+dn: uid=noodle,ou=people,dc=hackerdeen,dc=org
+cn: Carl Anderson
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: TTB0b3JvbGE=
+uidNumber: 1007
+gidNumber: 5002
+homeDirectory: /home/noodle
+uid: noodle
+
+dn: uid=ormiret,ou=people,dc=hackerdeen,dc=org
+cn: Robert McWilliam
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1008
+gidNumber: 5002
+homeDirectory: /home/ormiret
+uid: ormiret
+userPassword:: e1NTSEF9OXBlWWdPVyt2L09OSkF3Nmk0NE5pSmttbmZ5eUtidEo=
+
+dn: uid=nordin,ou=people,dc=hackerdeen,dc=org
+cn: Ed Watson
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1009
+gidNumber: 5002
+homeDirectory: /home/nordin
+uid: nordin
+userPassword:: e1NTSEF9Uk9CeEVjY2w1NEJ4bGxHckNRbFdkUi9VUDZCM3haTlc=
+
+dn: uid=michael,ou=people,dc=hackerdeen,dc=org
+cn: Michael Schlafli
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1010
+gidNumber: 5002
+homeDirectory: /home/michael
+uid: michael
+userPassword:: e1NTSEF9eU5lSGlLLzQ0aWhiajdsdDlhWVY5S1h3aDRiYTFZek0=
+
+dn: uid=graham,ou=people,dc=hackerdeen,dc=org
+cn: Graham Hawkesworth
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Z3JhaGFtbG9scw==
+uidNumber: 1011
+gidNumber: 5002
+homeDirectory: /home/graham
+uid: graham
+
+dn: uid=connall,ou=people,dc=hackerdeen,dc=org
+cn: Connall Lindsay
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Y29ubmFsbDI3Mw==
+uidNumber: 1012
+gidNumber: 5002
+homeDirectory: /home/connall
+uid: connall
+
+dn: uid=zenrhe,ou=people,dc=hackerdeen,dc=org
+cn: Rowan Evenstar
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1013
+gidNumber: 5002
+homeDirectory: /home/zenrhe
+uid: zenrhe
+userPassword:: e1NTSEF9Q0dWRy9MQzlrQ1FmS2U1RW91cEVnbmpLdjB2UllZTWM=
+
+dn: uid=tony,ou=people,dc=hackerdeen,dc=org
+cn: Tony Shannon
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1014
+gidNumber: 5002
+homeDirectory: /home/tony
+uid: tony
+userPassword:: e1NTSEF9VUtnTVZ1bDcrOXpBM0hpM0IwK1B1ZEFMeFRKUUViL0s=
+
+dn: uid=alastair,ou=people,dc=hackerdeen,dc=org
+cn: Alastair Welsh
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1015
+gidNumber: 5002
+homeDirectory: /home/alastair
+uid: alastair
+userPassword:: e1NTSEF9K0VNSzVwY0FSZm1qanpYa0k4SzZ3LzBVckQ5QlpiTU4=
+
+dn: uid=shell,ou=people,dc=hackerdeen,dc=org
+cn: Cameron Turner
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1016
+gidNumber: 5002
+homeDirectory: /home/shell
+uid: shell
+userPassword:: e1NTSEF9Wkw1RGpma1VzK29TaGRENWFtbGhucUtLcFVSbGNhcUw=
+
+dn: uid=allthediodes,ou=people,dc=hackerdeen,dc=org
+cn: Nick Burns
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: bmljazI5ODI=
+uidNumber: 1017
+gidNumber: 5002
+homeDirectory: /home/allthediodes
+uid: allthediodes
+
+dn: uid=richyrichuk,ou=people,dc=hackerdeen,dc=org
+cn: richard scott
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: a2s=
+uidNumber: 1018
+gidNumber: 5002
+homeDirectory: /home/richyrichuk
+uid: richyrichuk
+
+dn: uid=Enterobsidian,ou=people,dc=hackerdeen,dc=org
+cn: Calum Craig
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: aGFja2VyYm9vaw==
+uidNumber: 1019
+gidNumber: 5002
+homeDirectory: /home/Enterobsidian
+uid: Enterobsidian
+
+dn: uid=angelforge,ou=people,dc=hackerdeen,dc=org
+cn: Darren Addison
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: YkFnbTM0dDEz
+uidNumber: 1020
+gidNumber: 5002
+homeDirectory: /home/angelforge
+uid: angelforge
+
+dn: uid=Dexter,ou=people,dc=hackerdeen,dc=org
+cn: James Macleod
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: VzFiYmxl
+uidNumber: 1021
+gidNumber: 5002
+homeDirectory: /home/Dexter
+uid: Dexter
+
+dn: uid=calum,ou=people,dc=hackerdeen,dc=org
+cn: Calum Chisolm
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: YXJnb3R0cnVtcGV0
+uidNumber: 1022
+gidNumber: 5002
+homeDirectory: /home/calum
+uid: calum
+
+dn: uid=gistad,ou=people,dc=hackerdeen,dc=org
+cn: Geir Istad
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: MTJhcHRpdmEzNA==
+uidNumber: 1023
+gidNumber: 5002
+homeDirectory: /home/gistad
+uid: gistad
+
+dn: uid=bmikeohagan,ou=people,dc=hackerdeen,dc=org
+cn: Mike O'Hagan
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Y2poaA==
+uidNumber: 1024
+gidNumber: 5002
+homeDirectory: /home/bmikeohagan
+uid: bmikeohagan
+
+dn: uid=ajtravis,ou=people,dc=hackerdeen,dc=org
+cn: Tony Travis
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1025
+gidNumber: 5002
+homeDirectory: /home/ajtravis
+uid: ajtravis
+userPassword:: e1NTSEF9MUJ3L0w5WFJ0NjNkSUVCVWM0bU5vNVVTK2lsRVNVdHY=
+
+dn: uid=lostcaggy,ou=people,dc=hackerdeen,dc=org
+cn: Martin Evans
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: YnVydDc2ODg=
+uidNumber: 1026
+gidNumber: 5002
+homeDirectory: /home/lostcaggy
+uid: lostcaggy
+
+dn: uid=bruce273,ou=people,dc=hackerdeen,dc=org
+cn: Bruce Webster
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Q2hsb2VtYXgx
+uidNumber: 1027
+gidNumber: 5002
+homeDirectory: /home/bruce273
+uid: bruce273
+
+dn: uid=aidank,ou=people,dc=hackerdeen,dc=org
+cn: Aidan Karley
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: dG91cm1hbGluZQ==
+uidNumber: 1028
+gidNumber: 5002
+homeDirectory: /home/aidank
+uid: aidank
+
+dn: uid=hibby,ou=people,dc=hackerdeen,dc=org
+cn: Dave Hibberd
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: TW9kRE0wNjZ3
+uidNumber: 1029
+gidNumber: 5002
+homeDirectory: /home/hibby
+uid: hibby
+
+dn: uid=root,ou=people,dc=hackerdeen,dc=org
+cn: testig
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: bmF1Z2h0aW5lc3NsZXNzb25z
+uidNumber: 1030
+gidNumber: 5002
+homeDirectory: /home/root
+uid: root
+
+dn: uid=DocOcassi,ou=people,dc=hackerdeen,dc=org
+cn: Kevin Mulhern
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: UHJvZHVjdGl2ZTQ=
+uidNumber: 1031
+gidNumber: 5002
+homeDirectory: /home/DocOcassi
+uid: DocOcassi
+
+dn: uid=merlinstail,ou=people,dc=hackerdeen,dc=org
+cn: Giles Bayliss
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: aDRja3QzaGQwMHIh
+uidNumber: 1032
+gidNumber: 5002
+homeDirectory: /home/merlinstail
+uid: merlinstail
+
+dn: uid=neiljp,ou=people,dc=hackerdeen,dc=org
+cn: Neil Pilgrim
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1033
+gidNumber: 5002
+homeDirectory: /home/neiljp
+uid: neiljp
+userPassword:: e1NTSEF9TCtWUno1dTZYMW9tS0ZNYnE3V0dLVlZ0N1ZJWldWMnc=
+
+dn: uid=Peet,ou=people,dc=hackerdeen,dc=org
+cn: Peter
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: cm9iYmluLTM0
+uidNumber: 1034
+gidNumber: 5002
+homeDirectory: /home/Peet
+uid: Peet
+
+dn: uid=ajf,ou=people,dc=hackerdeen,dc=org
+cn: Andrea Faulds
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: c2FuZHZpY2g=
+uidNumber: 1035
+gidNumber: 5002
+homeDirectory: /home/ajf
+uid: ajf
+
+dn: uid=Derecho,ou=people,dc=hackerdeen,dc=org
+cn: Krzysztof Giebelen
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: YmFuYWFuMg==
+uidNumber: 1036
+gidNumber: 5002
+homeDirectory: /home/Derecho
+uid: Derecho
+
+dn: uid=AndyG,ou=people,dc=hackerdeen,dc=org
+cn: Andy Gaskell
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Umo3NXZsIw==
+uidNumber: 1037
+gidNumber: 5002
+homeDirectory: /home/AndyG
+uid: AndyG
+
+dn: uid=chil,ou=people,dc=hackerdeen,dc=org
+cn: Richard Buchan
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1040
+gidNumber: 5002
+homeDirectory: /home/chil
+uid: chil
+userPassword:: e1NTSEF9QWxlZ1I2a1d5ZXRXSmxMU0tVVFBoSGExQVY1dnM0WDc=
+
+dn: uid=kes,ou=people,dc=hackerdeen,dc=org
+cn: Kes Smith
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1041
+gidNumber: 5002
+homeDirectory: /home/kes
+uid: kes
+userPassword:: e1NTSEF9dVhDZkIwdDN0eklZL0xhR093UnVNVmg3ZHZxYUtaNG8=
+
+dn: uid=papasean,ou=people,dc=hackerdeen,dc=org
+cn: Sean
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+uidNumber: 1038
+gidNumber: 5002
+homeDirectory: /home/papasean
+uid: papasean
+userPassword:: e1NTSEF9aFV6bHZoUmVmYlZ4cXpEUHZkS1pKQ3c4eFZXZlpOSkc=
+
+dn: uid=Isandor,ou=people,dc=hackerdeen,dc=org
+cn: Sean Reilly
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: ZmlyZXdvcms1
+uidNumber: 1042
+gidNumber: 5002
+homeDirectory: /home/Isandor
+uid: Isandor
+
+dn: uid=utkarsh,ou=people,dc=hackerdeen,dc=org
+cn: Utkarsh Kulkarni
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: d2djNzJw
+uidNumber: 1043
+gidNumber: 5002
+homeDirectory: /home/utkarsh
+uid: utkarsh
+
+dn: uid=rcblob,ou=people,dc=hackerdeen,dc=org
+cn: Michael Schlafli
+objectClass: top
+objectClass: account
+objectClass: posixAccount
+userPassword:: Q2hpY2tlbnNoaXQx
+uidNumber: 1044
+gidNumber: 5002
+homeDirectory: /home/rcblob
+uid: rcblob
+

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Payment History</h2>
+{% for m, hist in hists.iteritems() %}
+<p><a href="/hub/admin/profile?u={{ m }}">{{ m }}</a></p>
+<p>
+  {% for h in hist %}<div class="payment {{ h.3 }}">{{ h.2 }}</div>{% endfor %}
+</p>
+{% endfor %}
+<p>Key: <div class="payment now">Pending</div>
+  <div class="payment paid">Paid</div>
+  <div class="payment gap">Not paid</div>
+  <div class="payment prejoin">Before they joined</div>
+</p>
+
+{% endblock %}

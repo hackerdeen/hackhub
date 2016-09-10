@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Members with payment gaps{% endblock %}
+{% block content %}
+<h2>Gaps in payment</h2>
+<p>The following members have paid in some but not all of the last 6 months</p>
+<table>
+<tr><th>Username</th><th>Gaps</th></tr>
+{% for member, gap in gaps.iteritems() %}
+<tr>
+	<td><a href="/hub/admin/profile?u={{ member }}">{{ member }}</a></td>
+	<td>{{ gap|join(', ') }}</td>
+</tr>
+{% endfor %}
+</table>
+
+
+{% endblock %}
