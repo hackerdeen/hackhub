@@ -133,7 +133,7 @@ def admin_applications():
         l = ldap.initialize(settings.LDAP_URI)
         l.simple_bind_s(settings.LDAP_BIND_DN, settings.LDAP_PASSWORD)
         l.modify_s(settings.LDAP_MEMBERS_GROUP_DN, [
-            (ldap.MOD_ADD, "member", "uid="+username+","+settings.LDAP_USERS_DN),
+            (ldap.MOD_ADD, "member", "uid="+username.encode("ascii", "ignore")+","+settings.LDAP_USERS_DN),
         ])
 
         return redirect('/hub/admin')
