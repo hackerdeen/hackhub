@@ -2,6 +2,6 @@ import settings
 import cas
 
 client = cas.CASClientV2(
-    service_url='http://finzean.57north.org.uk:5000/hub/login/ticket',
-    server_url='https://guest.id.57north.org.uk',
+    service_url=settings.CAS_SERVICE_URL,
+    server_url=settings.CAS_SERVER_URL,
 )

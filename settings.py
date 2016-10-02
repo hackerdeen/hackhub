@@ -1,7 +1,7 @@
 from local_settings import *
 
 # Settings
-SQLITE_DB = "/srv/vhosts/www/hackhub.db"
+SQLITE_DB = "/home/hackhub/hackhub.db"
 CAS_SERVICE_URL = "https://hub.57north.org.uk/hub/login/ticket"
 CAS_SERVER_URL = "https://guest.id.57north.org.uk"
 LDAP_URI = "ldap://localhost"
