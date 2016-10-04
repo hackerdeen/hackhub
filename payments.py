@@ -1,6 +1,6 @@
 import hackhub
 from datetime import datetime
-from monthdelta import MonthDelta
+from monthdelta import monthdelta
 
 class Payments:
     def __init__(self, month=None, year=None):
@@ -27,7 +27,7 @@ def membership():
     membership = []
     for i in xrange(36):
         membership.append((month.month,month.year,Payments(month.month, month.year).count()))
-        month += MonthDelta(-1)
+        month += monthdelta(-1)
     return [m for m in membership if not m[-1] == 0] 
 
 def member_list():
@@ -39,5 +39,5 @@ def member_list():
             curr.execute("SELECT username, email FROM member WHERE username = ?", user)
             res = curr.fetchone()
             members[res[1]] = res[0]
-        month += MonthDelta(-1)
+        month += monthdelta(-1)
     return members
