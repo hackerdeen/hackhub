@@ -14,7 +14,7 @@ def api_membership_graph():
     from payments import membership
     import matplotlib
     import numpy as np
-    # matplotlib.use("Agg")
+    matplotlib.use("Agg")
 
     import matplotlib.pyplot as plt
     from cStringIO import StringIO

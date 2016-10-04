@@ -2,8 +2,10 @@
 {% block title %}Membership Applications{% endblock %}
 {% block content %}
 <h2>Membership Applications</h2>
+
+{% if applications %}
 <table>
-<tr><th>Username</th>
+  <tr><th>Username</th>
     <th>Real Name</th>
     <th>Nickname</th>
     <th>Email</th>
@@ -26,4 +28,8 @@
 </tr>
 {% endfor %}
 </table>
+{% else %}
+<p>There are not currently any applications</p>
+{% endif %}
+
 {% endblock %}
