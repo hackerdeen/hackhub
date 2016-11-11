@@ -18,7 +18,7 @@ def close_space():
     print "Open condition:", current.status['open']
     if current.status['open']:
         print "Updating status..."
-        hackhub.new_status(0, next_message(), 'hackhub')
+        hackhub.new_status(0, next_message().decode('utf-8'), 'hackhub')
         print "Done."
 
 if __name__=="__main__":
