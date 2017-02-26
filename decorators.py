@@ -9,6 +9,7 @@ def login_required(f):
             return f(*args, **kwargs)
         else:
             return redirect("/hub/login")
+    func.func_name = f.func_name
     return func
 
 def admin_required(f):
@@ -19,6 +20,7 @@ def admin_required(f):
             return f(*args, **kwargs)
         else:
             return abort(403)
+    func.func_name = f.func_name
     return func
 
         
