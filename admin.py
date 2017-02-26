@@ -9,13 +9,11 @@ from find_gaps import find_gaps
 import ldap
 
 @app.route('/hub/admin')
-@login_required
 @admin_required
 def admin_home():
     return render_template('admin.html', members=[m for m in all_member() if m.is_active()])
 
 @app.route('/hub/admin/payment', methods=['POST'])
-@login_required
 @admin_required
 def admin_payment():
     user = Member(session['username'])
@@ -37,7 +35,6 @@ def admin_payment():
             return render_template('message.html', title='Fail', message=str(e))
 
 @app.route('/hub/admin/bank_payment', methods=['POST'])
-@login_requred
 @admin_required
 def admin_bank_payment():
     user = Member(session['username'])
@@ -48,7 +45,6 @@ def admin_bank_payment():
     
     
 @app.route('/hub/admin/profile', methods=['GET', 'POST'])
-@login_required
 @admin_required
 def admin_profile():
     user = Member(session['username'])
@@ -65,14 +61,12 @@ def admin_profile():
         return redirect('/hub/admin')
 
 @app.route('/hub/admin/payment_hist')
-@login_required
 @admin_required
 def payment_hist():
     return render_template('admin_payment_hist.html', user=Member(request.args['u']))
     
 
 @app.route('/hub/admin/payment_dashboard')
-@login_required
 @admin_required
 def payment_dashboard():
     hists = {}
@@ -81,7 +75,6 @@ def payment_dashboard():
     return render_template('admin_payment_dash.html', hists=hists)
 
 @app.route('/hub/admin/applications', methods=['GET', 'POST'])
-@login_required
 @admin_required
 def admin_applications():
     if request.method == 'GET':
@@ -139,7 +132,6 @@ def admin_balance():
 
 
 @app.route('/hub/admin/behind')
-@login_required
 @admin_required
 def admin_behind():
     attrs = [int(time.strftime("%m")), int(time.strftime("%Y")),
@@ -160,30 +152,29 @@ def admin_behind():
     attrs = tuple(attrs)
     db = get_db()
     cur = db.cursor()
-    cur.execute("SELECT username FROM member WHERE username NOT IN (SELECT username FROM payment WHERE (month == ? AND year == ?) OR (month == ? AND year == ?) OR (month == ? AND year == ?)) AND username NOT IN (SELECT user FROM dismembered)", attrs)
+    cur.execute("SELECT username FROM member WHERE username NOT IN (SELECT username FROM payment WHERE (month == ? AND year == ?) OR (month == ? AND year == ?) OR (month == ? AND year == ?) OR (month == ? AND year == ?)) AND username NOT IN (SELECT user FROM dismembered)", attrs)
     users = cur.fetchall()
     behind = []
     errors = ""
     for user in users:
         m = Member(user[0])
         try:
-            year, month = m.get_payments()[0][0:2]
+            last_payment = m.get_payments()[0]
+            year, month = last_payment[0], last_payment[1] 
         except Exception as e:
             year, month = None, None
-            errors += str(e)
+            errors += str(e) + "\n"
         behind.append((m.username, m.profile["realname"], m.profile["email"], year, month))
     return render_template('admin_behind.html', behind=behind, errors=errors)
 
 
 @app.route('/hub/admin/gaps')
-@login_required
 @admin_required
 def admin_gaps():
     gaps = find_gaps(6)
     return render_template('admin_gaps.html', gaps=gaps)
 
 @app.route('/hub/admin/payment_list')
-@login_required
 @admin_required
 def payment_list():
     db = get_db()
