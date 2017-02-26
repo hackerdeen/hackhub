@@ -2,7 +2,7 @@
 {% block title %}Members behind on payments{% endblock %}
 {% block content %}
 <h2>Candidates for dismemberment</h2>
-<p>The following members don't have payments logged for the current or two previous months:</p>
+<p>The following members don't have payments logged for the current or three previous months:</p>
 <table>
 <tr><th>Username</th><th>Real Name</th><th>Email</th><th>Last payment</th></tr>
 {% for member in behind %}
@@ -15,5 +15,10 @@
 {% endfor %}
 </table>
 
+{% if errors %}
+<pre>
+  {{ errors }}
+</pre>
+{% endif %}
 
 {% endblock %}
