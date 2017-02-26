@@ -9,18 +9,21 @@ def login_required(f):
             return f(*args, **kwargs)
         else:
             return redirect("/hub/login")
-    func.func_name = f.func_name
+    func.func_name = "login_required"+f.func_name
     return func
 
 def admin_required(f):
     @wraps(f)
     def func(*args, **kwargs):
-        user = Member(session["username"])
-        if user.is_admin():
-            return f(*args, **kwargs)
+        if 'username' in session:
+            user = Member(session["username"])
+            if user.is_admin():
+                return f(*args, **kwargs)
+            else:
+                return abort(403)
         else:
-            return abort(403)
-    func.func_name = f.func_name
+            return redirect("/hub/login")
+    func.func_name = "admin_required"+f.func_name
     return func
 
         
