@@ -16,9 +16,6 @@ def admin_home():
 @app.route('/hub/admin/payment', methods=['POST'])
 @admin_required
 def admin_payment():
-    user = Member(session['username'])
-    if not user.is_admin():
-        abort(403)
     member = Member(request.form['username'])
     if 'month' in request.form.keys():
         try:
@@ -33,6 +30,9 @@ def admin_payment():
             return redirect('/hub/admin')
         except Exception as e:
             return render_template('message.html', title='Fail', message=str(e))
+    else:
+        now = datetime.datetime.now()
+        member.add_payment(now.month, now.year, session['username'])
 
 @app.route('/hub/admin/bank_payment', methods=['POST'])
 @admin_required
