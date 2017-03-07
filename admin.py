@@ -33,6 +33,7 @@ def admin_payment():
     else:
         now = datetime.datetime.now()
         member.add_payment(now.month, now.year, session['username'])
+        return redirect('/hub/admin')
 
 @app.route('/hub/admin/bank_payment', methods=['POST'])
 @admin_required
