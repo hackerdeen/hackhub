@@ -24,11 +24,11 @@ spaceapi = {
     "ml":"57north-discuss@57north.co",
     "irc":"irc://irc.freenode.net/#57N",
     "phone":"+441224583491",
-    "issue_mail":"irl@sdf.org"
+    "issue_mail":"contact@57north.co"
   },
   "issue_report_channels":[
     "issue_mail"
   ],
-  "logo":"http://bodaegl.ormiret.com/foo/57Nlogo.png"
+  "logo":"https://57north.org.uk/wiki_logo.png"
 }
 
