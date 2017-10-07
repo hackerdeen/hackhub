@@ -31,8 +31,8 @@ def spaceapi_json():
     s = spaceapi
     s['state'] = Status().status
     s['state']['icon'] = {}
-    s['state']['icon']['open'] = 'http://hackerdeen.org/static/open.png'
-    s['state']['icon']['closed'] = 'http://hackerdeen.org/static/closed.png'
+    s['state']['icon']['open'] = 'https://57north.org.uk/57_North_CLL_open.png'
+    s['state']['icon']['closed'] = 'https://57north.org.uk/57_North_CLL_closed.png'
     s['events'] = []
     for event in recent_events():
         s['events'].append({'name': event[1],
