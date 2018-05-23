@@ -10,7 +10,8 @@
 <table>
 <tr><th>Username</th>
     <th>Real Name</th>
-    <th>Paid</th>
+  <th>Paid</th>
+  <th>Last month</th>
     <th>Edit</th>
     <th>Payment History</th>
     <th>Payment for other time</th>
@@ -21,11 +22,23 @@
 	<td>{{ member.profile.realname }}</td>
 	<td>
 		{% if member.is_paid() %}
-		Paid
+		Paid. 
 		{% else %}
 		<form action="/hub/admin/payment" method="post">
 		<input type="hidden" name="username" value="{{ member.username }}" />
 		<input type="submit" value="Mark Paid" class="submit"/>
+		</form>
+		{% endif %}
+	</td>
+	<td>
+		{% if member.is_paid(-1) %}
+		Paid last month.
+		{% else %}
+		<form action="/hub/admin/payment" method="post">
+		  <input type="hidden" name="username" value="{{ member.username }}" />
+		  <input type="hidden" name="year" value="{{ last_month.year }}" />
+		  <input type="hidden" name="year" value="{{ last_month.month }}" />
+		  <input type="submit" value="Mark last month Paid" class="submit"/>
 		</form>
 		{% endif %}
 	</td>

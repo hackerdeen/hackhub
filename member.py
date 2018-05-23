@@ -67,9 +67,12 @@ class Member:
             return True
         return False
     
-    def is_paid(self):
-        attrs = (self.username, int(time.strftime("%m")), int(time.strftime("%Y")))
-        
+    def is_paid(self, delta=0):
+        attrs = [self.username, int(time.strftime("%m")), int(time.strftime("%Y"))]
+        attrs[1] += delta
+        if attrs[1] <= 0:
+            attrs[1] = 12 - attrs[1]
+            attrs[2] -= 1
         db = hackhub.get_db()
         cur = db.cursor()
         cur.execute("select * from payment where username=? and month=? and year=?", attrs)

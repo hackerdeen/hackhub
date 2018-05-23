@@ -11,7 +11,14 @@ import ldap
 @app.route('/hub/admin')
 @admin_required
 def admin_home():
-    return render_template('admin.html', members=[m for m in all_member() if m.is_active()])
+    now = datetime.datetime.now()
+    last_month = {'year': now.year, 'month': now.month}
+    last_month['month'] -= 1
+    if last_month['month'] == 0:
+        last_month['month'] = 12
+        last_month['year'] -= 1
+    return render_template('admin.html', members=[m for m in all_member() if m.is_active()],
+                           last_month=last_month)
 
 @app.route('/hub/admin/payment', methods=['POST'])
 @admin_required
@@ -184,11 +191,7 @@ def payment_list():
     payments = cur.fetchall()
     return render_template('admin_payments.html', payments=payments)
 
-<<<<<<< HEAD
-
 @app.route('/hub/admin/members')
 @admin_required
 def member_list():
     return render_template('admin_member_list.html', members=[m for m in all_member() if m.is_active()])
-=======
->>>>>>> 5e8c3d1f4d8df15f9c344f5751ef41d0666ef37b
