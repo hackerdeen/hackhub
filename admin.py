@@ -184,8 +184,11 @@ def payment_list():
     payments = cur.fetchall()
     return render_template('admin_payments.html', payments=payments)
 
+<<<<<<< HEAD
 
 @app.route('/hub/admin/members')
 @admin_required
 def member_list():
     return render_template('admin_member_list.html', members=[m for m in all_member() if m.is_active()])
+=======
+>>>>>>> 5e8c3d1f4d8df15f9c344f5751ef41d0666ef37b
