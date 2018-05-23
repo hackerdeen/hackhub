@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Member list</h2>
+<p>The following {{ members|length }} members currently exist:</p>
+<table>
+<tr><th>Username</th>
+    <th>Real Name</th>
+    <th>email</th>
+</tr>
+{% for member in members %}
+<tr>
+	<td>{{ member.profile.username }}</td>
+	<td>{{ member.profile.realname }}</td>
+	<td>{{ member.profile.email }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<p>Python friendly version of list:</p>
+<pre>[
+  {% for m in members %}
+  {'username':"{{ m.profile.username }}", 'name':"{{ m.profile.realname }}", 'email':"{{ m.profile.email }}" },
+  {% endfor %}
+]</pre>
+
+{% endblock %}
