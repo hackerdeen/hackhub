@@ -100,5 +100,8 @@ CREATE TABLE application (
        realname text not null,
        nickname text not null,
        email text not null,
-       address text not null
+       address text not null,
+       received integer not null default 0,
+       ignored integer not null default 0,
+       ignored_by text
        );

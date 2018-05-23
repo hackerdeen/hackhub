@@ -10,6 +10,7 @@
     <th>Nickname</th>
     <th>Email</th>
     <th>Address</th>
+    <th>Received</th>
     <th></th>
 </tr>
 {% for application in applications %}
@@ -19,6 +20,7 @@
 	<td>{{ application.nickname }}</td>
 	<td>{{ application.email }}</td>
 	<td>{{ application.address }}</td>
+	<td>{{ application.received|ts2readable }}</td>
 	<td>
 	<form action="/hub/admin/applications" method="post">
 	<input type="hidden" name="id" value="{{ application.id }}" />

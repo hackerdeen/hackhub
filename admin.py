@@ -81,8 +81,8 @@ def admin_applications():
     if request.method == 'GET':
         db = get_db()
         cur = db.cursor()
-        cur.execute("""SELECT id, username, realname, nickname, email, address
-            FROM application WHERE accepted=0 ORDER BY id DESC""")
+        cur.execute("""SELECT id, username, realname, nickname, email, address, received
+            FROM application WHERE accepted=0 AND ignored=0 ORDER BY id DESC""")
         applications = cur.fetchall()
         cur.close()
         print applications
@@ -184,3 +184,8 @@ def payment_list():
     payments = cur.fetchall()
     return render_template('admin_payments.html', payments=payments)
 
+
+@app.route('/hub/admin/members')
+@admin_required
+def member_list():
+    return render_template('admin_member_list.html', members=[m for m in all_member() if m.is_active()])

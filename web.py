@@ -115,7 +115,7 @@ def hub_apply_for_membership():
 
         cur = db.cursor()
         cur.execute("""insert into application (username, realname,
-            nickname, email, address) values (?, ?, ?, ?, ?)""",
+            nickname, email, address, received) values (?, ?, ?, ?, ?, strftime('%s', 'now'))""",
             (username, realname, nickname, email, address))
         db.commit()
         cur.close()
