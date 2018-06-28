@@ -37,7 +37,7 @@
 		<form action="/hub/admin/payment" method="post">
 		  <input type="hidden" name="username" value="{{ member.username }}" />
 		  <input type="hidden" name="year" value="{{ last_month.year }}" />
-		  <input type="hidden" name="year" value="{{ last_month.month }}" />
+		  <input type="hidden" name="month" value="{{ last_month.month }}" />
 		  <input type="submit" value="Mark last month Paid" class="submit"/>
 		</form>
 		{% endif %}
