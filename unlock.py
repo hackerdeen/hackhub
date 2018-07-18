@@ -22,7 +22,7 @@ def unlock(user):
     signature = signed.read()
     form = {'command':str(signature)}
     data = urlencode(form)
-    req = urllib2.Request("http://doorbot.57north.co/open", data)
+    req = urllib2.Request("http://doorbot-d.57north.org.uk/open", data)
     try:
         res = urllib2.urlopen(req)
         response = json.loads(res.read())
