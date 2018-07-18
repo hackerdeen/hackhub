@@ -32,10 +32,7 @@ def the_blog():
 @app.route('/spaceapi')
 def spaceapi_json():
     s = spaceapi
-    s['state'] = Status().status
-    s['state']['icon'] = {}
-    s['state']['icon']['open'] = 'https://57north.org.uk/57_North_CLL_open.png'
-    s['state']['icon']['closed'] = 'https://57north.org.uk/57_North_CLL_closed.png'
+    s['state'].update(Status().status)
     s['events'] = []
     for event in recent_events():
         s['events'].append({'name': event[1],

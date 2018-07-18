@@ -14,6 +14,12 @@ spaceapi = {
   "api":"0.13",
   "space":"57North Hacklab",
   "url":"https://57north.org.uk/",
+  "state":{
+    "icon":{
+      "open": "https://57north.org.uk/57_North_CLL_open.png",
+      "closed": "https://57north.org.uk/57_North_CLL_closed.png"
+    }
+  },
   "location":{
     "address":"Engage Gaming, at 26 North Silver Street, AB10 1RL",
     "lat":57.147295,
