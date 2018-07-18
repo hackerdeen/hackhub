@@ -12,23 +12,32 @@ LDAP_USERS_DN = "ou=users,dc=57north,dc=org,dc=uk"
 # This is used as the basis for the SpaceAPI
 spaceapi = {
   "api":"0.13",
-  "space":"Not 57North Hacklab",
+  "space":"57North Hacklab",
   "url":"https://57north.org.uk/",
   "location":{
-    "address":"35a Union Street, Aberdeen, United Kingdom",
-    "lat":57.147310,
-    "lon":-2.095607
+    "address":"Engage Gaming, at 26 North Silver Street, AB10 1RL",
+    "lat":57.147295,
+    "lon":-2.106229
   },
   "contact":{
     "twitter":"@57NorthHacklab",
-    "ml":"57north-discuss@57north.co",
+    "ml":"57north-discuss@lists.57north.co",
     "irc":"irc://irc.freenode.net/#57N",
-    "phone":"+441224583491",
-    "issue_mail":"contact@57north.co"
+    "issue_mail":"contact@57north.org.uk"
   },
   "issue_report_channels":[
     "issue_mail"
   ],
+  "feeds":{
+    "calendar":{
+      "type":"ical",
+      "url":"http://opentechcalendar.co.uk/api1/group/151/events.ical"
+    },
+    "wiki":{
+      "type":"atom",
+      "url":"https://wiki.57north.org.uk/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom"
+    }
+  },
   "logo":"https://57north.org.uk/wiki_logo.png"
 }
 
