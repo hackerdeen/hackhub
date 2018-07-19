@@ -7,8 +7,11 @@ from bank import bank
 from door_code import new_code
 from decorators import login_required
 from casclient import client as casclient
+from payments import membership
 import datetime
 
+MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+          'August', 'September', 'October', 'November', 'December']
 
 @app.route('/')
 def the_homepage():
@@ -29,17 +32,21 @@ def the_blog():
 @app.route('/spaceapi')
 def spaceapi_json():
     s = spaceapi
-    s['state'] = Status().status
-    s['state']['icon'] = {}
-    s['state']['icon']['open'] = 'https://57north.org.uk/57_North_CLL_open.png'
-    s['state']['icon']['closed'] = 'https://57north.org.uk/57_North_CLL_closed.png'
+    s['state'].update(Status().status)
     s['events'] = []
     for event in recent_events():
         s['events'].append({'name': event[1],
                             'type': event[2],
                             'timestamp': event[3],
                             'extra': event[4]})
-                            
+    s['sensors'] = {}
+    membership_counts = membership()
+    s['sensors']['total_member_count'] = []
+    for i in range(0,3):
+        s['sensors']['total_member_count'].add({
+            'location': MONTHS[membership_counts[i][0] - 1] + " " + membership_counts[i][1],
+            'value': membership_counts[i][2]
+        })
     r = jsonify(s)
     r.headers['Access-Control-Allow-Origin'] = '*'
     r.headers['Cache-Control'] = 'no-cache'
