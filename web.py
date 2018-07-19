@@ -43,8 +43,8 @@ def spaceapi_json():
     membership_counts = membership()
     s['sensors']['total_member_count'] = []
     for i in range(0,3):
-        s['sensors']['total_member_count'].add({
-            'location': MONTHS[membership_counts[i][0] - 1] + " " + membership_counts[i][1],
+        s['sensors']['total_member_count'].append({
+            'location': str(MONTHS[membership_counts[i][0] - 1]) + " " + str(membership_counts[i][1]),
             'value': membership_counts[i][2]
         })
     r = jsonify(s)
