@@ -65,8 +65,10 @@ DROP TABLE IF EXISTS dismembered;
 CREATE TABLE dismembered (
        id integer primary key autoincrement,
        user text not null,
-       timestamp integet not null, -- UNIX timestamp
-       reason text not null
+       timestamp integer not null, -- UNIX timestamp
+       reason text not null,
+       date_reset integer, -- UNIX timestamp
+       reason_reset text
 );
 
 DROP TABLE IF EXISTS door_codes;
