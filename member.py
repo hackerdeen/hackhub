@@ -179,11 +179,11 @@ def new_member(username, details):
 def undismember(username, reason):
     db = hackhub.get_db()
     cur = db.cursor()
-    cur.execute("select * from dismembered where user=?", (username))
+    cur.execute("select * from dismembered where user=?", (username,))
     if cur.fetchone() == None:
         raise ValueError("No such member to undismember")
     t = int(time.time())
-    cur.execute("insert into dismembered (date_reset, reason_reset) values (?, ?) where user=?", (t, reason, username))
+    cur.execute("UPDATE dismembered SET date_reset=?, reason_reset=? where user=?", (t, reason, username))
     db.commit()
     cur.close()
 
