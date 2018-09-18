@@ -62,7 +62,7 @@ class Member:
     def is_active(self):
         db = hackhub.get_db()
         cur = db.cursor()
-        cur.execute("select * from dismembered where user=?", (self.username,))
+        cur.execute("select * from dismembered where user=? and date_reset is null", (self.username,))
         if cur.fetchone() == None:
             return True
         return False
@@ -175,6 +175,17 @@ def new_member(username, details):
     m.update_profile(details)
     
     return True
+
+def undismember(username, reason):
+    db = hackhub.get_db()
+    cur = db.cursor()
+    cur.execute("select * from dismembered where user=?", (username))
+    if cur.fetchone() == None:
+        raise ValueError("No such member to undismember")
+    t = int(time.time())
+    cur.execute("insert into dismembered (date_reset, reason_reset) values (?, ?) where user=?", (t, reason, username))
+    db.commit()
+    cur.close()
 
 def all_member():
     db = hackhub.get_db()
