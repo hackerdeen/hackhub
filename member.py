@@ -62,7 +62,7 @@ class Member:
     def is_active(self):
         db = hackhub.get_db()
         cur = db.cursor()
-        cur.execute("select * from dismembered where user=?", (self.username,))
+        cur.execute("select * from dismembered where user=? and date_reset is null", (self.username,))
         if cur.fetchone() == None:
             return True
         return False
