@@ -47,3 +47,17 @@ spaceapi = {
   "logo":"https://57north.org.uk/wiki_logo.png"
 }
 
+common_msgs = ["alrighty then", "Ummm...","Welcome to the internet of things.", "I can haz hax?",
+               "I need to put something here", "Hacky hack hack",
+               "I don't want to interrupt, but did you hear about my weapons-grade plutonium?"]
+
+open_msgs = common_msgs + ["Commence hacking",  "Man your hackstations", "Hackurday", "Happy New Hack",
+                           "TODO: open message", "Open? Open!", 
+                           "WARN: closed has been deprecated.", "let the blinkenlights blink",
+                           "Space is very open. Now so is the space.", "Openness detected",
+                           "Frankly, we're very open.", "So open"]
+             
+close_msgs = common_msgs + ["Cease hacking", "Stand down from hackstations", "Ex-hack",
+                            "exit pursued by bear", "TODO: close message", "Closed? Closed.",
+                            "A state of closedness has been detected.", "Dim the blinkenlights",
+                            "Done."]
