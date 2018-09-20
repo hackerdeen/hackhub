@@ -50,11 +50,11 @@ def api_wisdom():
 def close_space(who):
     msg = random.choice(hackhub.close_msgs)
     hackhub.new_status(0, msg, who)
-    return jsonify({"msg": "Opened: "+msg})
+    return jsonify({"msg": "Closed: "+msg})
 
 def open_space(who):
     msg = random.choice(hackhub.open_msgs)
-    hackhub.new_status(0, msg, who)
+    hackhub.new_status(1, msg, who)
     return jsonify({"msg": "Opened: "+msg})
 
 @app.route("/api/status/<secret>/<action>")
@@ -70,12 +70,12 @@ def change_status(secret, action):
             return jsonify({"msg": "Already open"})
         else:
             return open_space(who)
-    else if action == "close":
+    elif action == "close":
         if current.status["open"]:
             return close_space(who)
         else:
             return jsonify({"msg": "Already closed"})
-    else if action =="toggle":
+    elif action =="toggle":
         if current.status["open"]:
             return close_space(who)
         else:
