@@ -127,13 +127,13 @@ th {
 
 input{
 	background: #fff;
-	border-radius: 4px;
+	border-radius: 3px;
 }
 .submit {
 	color: #fff;
 	padding:0.5em;
 	background: #00708c; 
-	border-radius: 4px;
+	border-radius: 3px;
 	border: 1px solid transparent;
 }
 
@@ -169,4 +169,25 @@ input{
 
 .prejoin {
     background-color: #6E8A84;
+}
+
+
+@media only screen and (max-width: 800px) {
+	#header{
+		background-position: 0 0;
+		background-size: 144px 50px;		
+	}
+	#status{
+		margin: 0;		
+	}	
+}
+
+@media only screen and (max-width: 600px) {
+	#header{
+		background-position: 0 0;
+		background-size: 72px 25px;		
+	}
+	#status{
+		margin: 0;		
+	}	
 }
