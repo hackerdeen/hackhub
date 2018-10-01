@@ -34,6 +34,7 @@ from admin import *
 from filters import *
 
 app.jinja_env.filters['ts2readable'] = ts2readable
+app.jinja_env.filters['nl2br'] = nl2br
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0")
