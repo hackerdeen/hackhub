@@ -16,7 +16,8 @@ $("#message").val(data.wisdom);
 <option value="1">Open</option>
 <option value="0" {% if status.open %}selected="selected"{% endif %}>Closed</option>
 </td></tr>
-<tr><th>Message</th><td><input type="text" name="message" id="message"/><a onclick="newMessage()" href="#">Generate a message</a>
+<tr><th>Message</th><td><textarea rows="4" name="message" id="message"></textarea>
+    <p><a onclick="newMessage()" href="#">Generate a message</a></p>
 </td></tr>
 </table>
 <p><input type="submit" class="submit" value="Update Status" /></p>
