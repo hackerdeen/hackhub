@@ -11,7 +11,7 @@
 <tr><th>IRC Handle</th><td><input type="text" name="irc" value="{{ profile.irc }}" /></td></tr>
 <tr><th>Twitter Username</th><td><input type="text" name="twitter" value="{{ profile.twitter }}" /></td></tr>
 <tr><th>Github Username</th><td><input type="text" name="github" value="{{ profile.github }}" /></td></tr>
-<tr><th>Address</th><td>{{ profile.address }}</td></tr>
+<tr><th>Address</th><td><textarea name="address" rows="4" cols="20">{{ profile.address }}</textarea></td></tr>
 </table>
 <p><input type="submit" class="submit" value="Save Changes" /><input type="button" onclick="javascript:history.back();" value="Cancel" /></p>
 </form>

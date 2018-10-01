@@ -142,7 +142,7 @@ def hub_profile_edit():
         return render_template('profile_edit.html', profile=Member(session['username']).get_profile(), 
                                status=Status().status)
     elif request.method == 'POST':
-        updatable = ['realname', 'nickname', 'email', 'twitter', 'irc', 'github']
+        updatable = ['realname', 'nickname', 'email', 'twitter', 'irc', 'github', 'address']
         update = {}
         for x in request.form:
             if x in updatable:
