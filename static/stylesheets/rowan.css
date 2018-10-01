@@ -1,38 +1,49 @@
 body {
 	font-family: Arial, sans-serif;
-	color: grey;
-	background: #000;
-	border: 3px double #333;
-	padding: 10px;
+	color: #000;
+	background: #333;
+	margin: 0px;
+	padding: 0px;
 }
 body a {
-	color: #f00;
+	color: #28364f;
 }
 
-#wrapper
-{
-	width:80%;
+#wrapper{
+	max-width: 1000px;
 	margin: 0 auto;
 }
 
 #header{
 	position: relative;
+	background-color: #28364f;	
+	background-image: url(https://57north.org.uk/img/logo.png);
+	background-position: -5px -10px;
+	background-repeat: no-repeat;
+	color: #fff;		
+}
+#header a{
+	color: #fff;	
+}
+#header h1{
+	margin: 0;
+	padding: 22px 0px 20px 0px;
 }
 #status{
-	/*float:right;*/
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 5;
 	font-style:italic;
 }
 /*ul{ display: inline; list-item-style: none; padding: 0; margin: 0; }*/
 
 /**NAVIGATION**/
-ul#navbar
-{ border:1px solid #ccc;
-    border-width:1px 0;
+ul#navbar { 
+	background-color: #00708c;
     list-style:none;
 	text-align:center;
+	margin: 0;
+	padding: 0;
 }
 
 ul#navbar li { display: inline; }
@@ -41,7 +52,8 @@ ul#navbar a {
 	text-decoration:none;
 	text-align:center;
 	padding: 1em 1em 1em 0;
-	}
+
+}
 	
 ul#navbar>li>a:hover{
 	text-decoration:underline;
@@ -78,6 +90,14 @@ ul#navbar>li>a:hover{
 	text-decoration:underline!important;
 }
 
+#content{
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+	padding: 20px;
+}
+
+
 /*CONTENT*/
 
 h1{
@@ -85,8 +105,9 @@ h1{
 }
 
 h2{
-	/*border-bottom: 2px solid red;*/
-	border-bottom: 3px double #333;
+	border-bottom: 2px solid #00708c;
+	margin: 5px 0px;
+	padding: 0;
 }
 table{
 	border:none;
@@ -97,30 +118,34 @@ th, td{
 }
 
 th {
-	/*border-bottom: 2px solid red;*/
-	text-align:right!important;
+	text-align:left !important;
 }
 
 .info{
 	font-style:italic;
 }
 
-input
-{
-	background: grey;
+input{
+	background: #fff;
+	border-radius: 4px;
 }
 .submit {
-	 color: #fff;
-	
-	 /*border: none;*/
+	color: #fff;
 	padding:0.5em;
-	background: #0c0; 
+	background: #00708c; 
+	border-radius: 4px;
+	border: 1px solid transparent;
 }
 
 #footer {
-	margin-top: 10px;
-	border-top: 3px double #333;
+	margin-top: 0px;
 	font-size: x-small;
+	background-color: #28364f;
+	padding: 10px;	
+	color: #fff;
+}
+#footer a{
+	color: #fff;
 }
 
 #message {
