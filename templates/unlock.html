@@ -4,6 +4,23 @@
 <h2>Unlock</h2>
 <p>To unlock the door into the space <a href="/hub/open_door">click here.</a></p>
 <p>Please make sure it's locked again when you're done.</p>
-<p>TO generate an SMS code to unlock the door later <a href="/hub/door_code">click here.</a></p>
 
+<p>To generate an SMS code to unlock the door later <a href="/hub/door_code">click here.</a></p>
+
+{% if code %}
+<p>Your magic unlock URL:
+  <a href="/hub/open_door_code/{{ code }}">https://hub.57north.org.uk/hub/open_door_code/{{ code }}</a>
+</p>
+<p>This URL will work to unlock the door without you needing to be logged in.</p>
+<p>Please keep that URL secret. If you think it may have leaked you
+  can disable it and generate a new
+  one <a href="/hub/gen_url_code">here.</a>
+</p>
+{% else %}
+
+<p>To generate a magic unlock URL (that can be used to unlock the door
+without you needing to be logged in) <a href="/hub/gen_url_code">click
+here.</a></p>
+
+{% endif %}
 {% endblock %}

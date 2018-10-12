@@ -4,7 +4,7 @@ from member import Member
 from status import Status, new_status
 from event import new_event, recent_events
 from bank import bank
-from door_code import new_code
+from door_code import new_code, add_url_code, url_codes, user_url_code
 from decorators import login_required
 from casclient import client as casclient
 from payments import membership
@@ -199,7 +199,7 @@ def hub_status_update():
 @app.route('/hub/door')
 @login_required
 def door():
-    return render_template("unlock.html")
+    return render_template("unlock.html", code=user_url_code(session['username']))
     
 from unlock import unlock
 
@@ -222,7 +222,27 @@ def door_code():
         return render_template("door_code.html", code=new_code(session['username']))
     else:
         return render_template("open_door.html", response="You have to be an active member to do that.")
-        
+
+@app.route('/hub/open_door_code/<code>')
+def open_door_code(code):
+    for c in url_codes():
+        if c[0] == code:
+            if Member(c[1]).is_active():
+                success, resp = unlock(c[1])
+                if not success:
+                    resp = "Well that didn't work... " + resp
+                return render_template("open_door.html", response=resp)
+            else:
+                return render_template("open_door.html", response="Ypu have to be an active member to do that.")
+    else:
+        return abort(404)
+
+@app.route('/hub/gen_url_code')
+@login_required
+def gen_url_code():
+    add_url_code(session['username'])
+    return redirect('/hub/door')
+
 @app.route('/hub/so_form')
 @login_required
 def so_form():

@@ -107,3 +107,10 @@ CREATE TABLE application (
        ignored integer not null default 0,
        ignored_by text
        );
+
+DROP TABLE IF EXISTS url_codes;
+CREATE TABLE url_codes (
+       id integer primary key autoincrement,
+       code text not null,
+       username text not null
+       );
