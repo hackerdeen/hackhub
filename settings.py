@@ -29,7 +29,9 @@ spaceapi = {
     "twitter":"@57NorthHacklab",
     "ml":"57north-discuss@lists.57north.co",
     "irc":"irc://irc.freenode.net/#57N",
-    "issue_mail":"contact@57north.org.uk"
+    "issue_mail":"contact@57north.org.uk",
+    "phone":"+49221569191057",
+    "sip":"sip:1057@hg.eventphone.de"
   },
   "issue_report_channels":[
     "issue_mail"
