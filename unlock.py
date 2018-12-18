@@ -8,6 +8,7 @@ from flask import json
 from event import new_event
 
 def unlock(user):
+    # return True, "This was only a test"
     message = json.dumps({'user':user,
                          'time': int(time.time())})
     plain = pyme.core.Data(message)

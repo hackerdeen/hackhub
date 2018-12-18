@@ -9,6 +9,7 @@ from decorators import login_required
 from casclient import client as casclient
 from payments import membership
 import datetime
+import urllib
 
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
           'August', 'September', 'October', 'November', 'December']
@@ -209,11 +210,17 @@ def open_door():
     if Member(session['username']).is_active():
         success, message = unlock(session['username'])
         if success:
-            return render_template("open_door.html", response=message)
+            return redirect('/hub/door/'+urllib.quote_plus(message))
         else:
-            return render_template("open_door.html", response="Well that didn't work... " + message)
+            return redirect('/hub/door/'+urllib.quote_plus("Well that didn't work... " + message))
     else:
-        return render_template("open_door.html", response="You have to pay to do that :)")
+        return redirect('/hub/door/'+urllib.quote_plus("You have to pay to do that :)"))
+
+
+@app.route('/hub/door/<msg>')
+def open_door_res(msg):
+    msg = urllib.unquote_plus(msg)
+    return render_template("open_door.html", response=msg)
 
 @app.route('/hub/door_code')
 @login_required
@@ -231,9 +238,9 @@ def open_door_code(code):
                 success, resp = unlock(c[1])
                 if not success:
                     resp = "Well that didn't work... " + resp
-                return render_template("open_door.html", response=resp)
+                return redirect('/hub/door/'+urllib.quote_plus(resp))
             else:
-                return render_template("open_door.html", response="Ypu have to be an active member to do that.")
+                return redirect('/hub/door/'+urllib.quote_plus("You have to be an active member to do that."))
     else:
         return abort(404)
 
