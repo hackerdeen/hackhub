@@ -230,17 +230,32 @@ def door_code():
     else:
         return render_template("open_door.html", response="You have to be an active member to do that.")
 
-@app.route('/hub/open_door_code/<code>')
-def open_door_code(code):
+def unlock_code(code):
     for c in url_codes():
         if c[0] == code:
             if Member(c[1]).is_active():
                 success, resp = unlock(c[1])
-                if not success:
-                    resp = "Well that didn't work... " + resp
-                return redirect('/hub/door/'+urllib.quote_plus(resp))
+                return True, success, resp
             else:
-                return redirect('/hub/door/'+urllib.quote_plus("You have to be an active member to do that."))
+                return False, False, "Member is not active."
+    else:
+        return False, False, "Code not found"
+
+@app.route('/hub/open_door_code/<code>')
+def open_door_code(code):
+    found, unlocked, msg = unlock_code(code)
+    if found:
+        if not unlocked:
+            msg = "Well that didn't work... " + msg
+        return redirect('/hub/door/'+urllib.quote_plus(msg))
+    else:
+        return abort(404)
+
+@app.route('/hub/open_door_code_json/<code>')
+def open_door_code_json(code):
+    found, unlocked, msg = unlock_code(code)
+    if found:
+        return jsonify({'unlocked':unlocked, 'message': msg})
     else:
         return abort(404)
 
