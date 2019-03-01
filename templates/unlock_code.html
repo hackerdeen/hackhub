@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Unlock{% endblock %}
+{% block content %}
+<h2>Unlock</h2>
+{% if msg %}
+<p>{{ msg }}</p>
+{% endif %}
+
+<form action="/hub/unlock_door_code" method="post">
+  <input type="hidden" name="code" id="code" value="{{ code }}" />
+  <input type="submit" class="submit" value="Unlock the door" />
+</form>
+
+<p>Please make sure the door is locked again when you're done.</p>
+
+{% endblock %}

@@ -243,13 +243,16 @@ def unlock_code(code):
 
 @app.route('/hub/open_door_code/<code>')
 def open_door_code(code):
+    return render_template('unlock_code.html', msg=None, code=code) 
+
+@app.route('/hub/unlock_door_code', methods=['POST'])
+def unlcok_door_code():
+    code = request.form['code']
     found, unlocked, msg = unlock_code(code)
-    if found:
-        if not unlocked:
-            msg = "Well that didn't work... " + msg
-        return redirect('/hub/door/'+urllib.quote_plus(msg))
-    else:
-        return abort(404)
+    if not (found and unlocked):
+        msg = "Well that didn't work... " + msg
+    return render_template('unlock_code.html', code=code, msg=msg)
+
 
 @app.route('/hub/open_door_code_json/<code>')
 def open_door_code_json(code):
