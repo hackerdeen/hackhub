@@ -21,14 +21,14 @@ spaceapi = {
     }
   },
   "location":{
-    "address":"Engage Gaming, at 26 North Silver Street, AB10 1RL",
-    "lat":57.147295,
-    "lon":-2.106229
+    "address":"57North Hacklab, c/o Aberdeen Action on Disability, Suite H, Kettock Lodge, Innovation Park, Campus Two, Bridge of Don, Aberdeen AB22 8GU",
+    "lat":57.179470,
+    "lon":-2.110614
   },
   "contact":{
     "twitter":"@57NorthHacklab",
-    "ml":"57north-discuss@lists.57north.co",
-    "irc":"irc://irc.freenode.net/#57N",
+    "ml":"57north-discuss@lists.57north.org.uk",
+    "irc":"irc://irc.libera.chat/#57N",
     "issue_mail":"contact@57north.org.uk",
     "phone":"+49221569191057",
     "sip":"sip:1057@hg.eventphone.de"
@@ -40,10 +40,6 @@ spaceapi = {
     "calendar":{
       "type":"ical",
       "url":"http://opentechcalendar.co.uk/api1/group/151/events.ical"
-    },
-    "wiki":{
-      "type":"atom",
-      "url":"https://wiki.57north.org.uk/api.php?hidebots=1&urlversion=1&days=7&limit=50&action=feedrecentchanges&feedformat=atom"
     }
   },
   "logo":"https://57north.org.uk/wiki_logo.png"
