@@ -30,7 +30,9 @@ spaceapi = {
     "ml":"57north-discuss@lists.57north.org.uk",
     "irc":"irc://irc.libera.chat/#57N",
     "issue_mail":"contact@57north.org.uk",
-    "phone":"+49221569191057",
+    "phone":"+443304450576",
+    "phone_gb_local":"+441224900457",
+    "phone_de":"+49221569191057",
     "sip":"sip:1057@hg.eventphone.de"
   },
   "issue_report_channels":[
