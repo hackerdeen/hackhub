@@ -1,9 +1,9 @@
+from __future__ import print_function
 from paho import mqtt
 import paho.mqtt.client as paho
 from random import randrange
 from functools import partial
 from time import sleep
-from __future__ import print_function
 import hackhub
 
 unlock_done = False
