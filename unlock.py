@@ -22,7 +22,7 @@ def unlock(user=None):
     msg_id = randrange(int(1e9))
 
     c.on_message = partial(on_msg, msg_id)
-    c.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
+    c.tls_set()
     c.connect(hackhub.MQTT_BROKER, hackhub.MQTT_BROKER_PORT)
     c.subscribe("test")
 
