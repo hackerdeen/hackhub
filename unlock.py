@@ -11,7 +11,7 @@ unlock_done = False
 def on_msg(msg_id, c, ud, msg):
     global unlock_done
     m = msg.payload.decode("utf-8")
-    if f"<{msg_id}>" in m:
+    if "<{}>".format(msg_id) in m:
         unlock_done = True
 
 def unlock(user=None):
@@ -24,9 +24,9 @@ def unlock(user=None):
     c.on_message = partial(on_msg, msg_id)
     c.tls_set(tls_version=mqtt.client.ssl.PROTOCOL_TLS)
     c.connect(hackhub.MQTT_BROKER, hackhub.MQTT_BROKER_PORT)
-    c.subscribe(f"test")
+    c.subscribe("test")
 
-    c.publish(f"cmd", f"<{msg_id}>OUT1=ON,30")
+    c.publish("cmd", "<{}>OUT1=ON,30".format(msg_id))
 
     c.loop_start()
     times = 0
