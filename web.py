@@ -1,5 +1,5 @@
 from flask import request, jsonify, Response, json, redirect, abort, render_template, session, json
-from hackhub import app, spaceapi, get_db, DOOR_CODE
+from hackhub import app, spaceapi, get_db, DOOR_CODE, BACK_DOOR_CODE
 from member import Member
 from status import Status, new_status
 from event import new_event, recent_events
@@ -200,7 +200,8 @@ def hub_status_update():
 @app.route('/hub/door')
 @login_required
 def door():
-    return render_template("unlock.html", code=user_url_code(session['username']), door_code=DOOR_CODE)
+    return render_template("unlock.html", code=user_url_code(session['username']),
+                           door_code=DOOR_CODE, back_door_code=BACK_DOOR_CODE)
     
 from unlock import unlock
 
