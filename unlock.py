@@ -11,7 +11,7 @@ unlock_done = False
 def on_msg(msg_id, c, ud, msg):
     global unlock_done
     m = msg.payload.decode("utf-8")
-    if "<{}>".format(msg_id) in m:
+    if "ACK" in m:
         unlock_done = True
 
 def unlock(user=None):
@@ -26,7 +26,7 @@ def unlock(user=None):
     c.connect(hackhub.MQTT_BROKER, hackhub.MQTT_BROKER_PORT)
     c.subscribe("test")
 
-    c.publish("cmd", "<{}>OUT1=ON,30".format(msg_id))
+    c.publish("cmd", "open")
 
     c.loop_start()
     times = 0
