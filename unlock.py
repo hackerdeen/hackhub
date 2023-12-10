@@ -24,7 +24,7 @@ def unlock(user=None):
     c.on_message = partial(on_msg, msg_id)
     c.tls_set()
     c.connect(hackhub.MQTT_BROKER, hackhub.MQTT_BROKER_PORT)
-    c.subscribe("test")
+    c.subscribe("cmd")
 
     c.publish("cmd", "open")
 
@@ -33,7 +33,7 @@ def unlock(user=None):
     while not unlock_done:
         if times > 4000:
             c.loop_stop()
-            return False, "Timeout waiting for lock ot ACK command"
+            return False, "Timeout waiting for lock to ACK command"
         times += 1
         sleep(0.001)
     c.loop_stop()
