@@ -16,7 +16,8 @@ class Member:
             'github',
             'address',
             'key',
-            'adm'
+            'adm',
+            'remote'
         ]
     
     def __init__(self, username):
@@ -103,6 +104,9 @@ class Member:
     
     def is_keyholder(self):
         return self.profile['key']
+
+    def is_remote(self):
+        return self.profile['remote']
     
     def update_profile(self, details):
         for key in details.keys():

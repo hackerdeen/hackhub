@@ -12,9 +12,14 @@
 <tr><th>Twitter Username</th><td><input type="text" name="twitter" value="{{ profile.twitter }}" /></td></tr>
 <tr><th>Github Username</th><td><input type="text" name="github" value="{{ profile.github }}" /></td></tr>
 <tr><th>Address</th><td>{{ profile.address }}</td></tr>
+<tr><th>Keyholder</th><td><input type="text" name="key" value="{{ profile.key }}" /> </td></tr>
+<tr><th>Admin</th><td><input type="text" name="adm" value="{{ profile.adm }}" /> </td></tr>
+<tr><th>Remote</th><td><input type="text" name="remote" value="{{ profile.remote }}" /> </td></tr>
 </table>
 <p><input type="submit" class="submit" value="Save Changes" /><input type="button" onclick="javascript:history.back();" value="Cancel" /></p>
 </form>
+<p class="info">Keyholder, admin and remote are truthy integers. 0 is false and 1 (or any other number) is true. I did look at making them checkboxes but that was going to take more effort than I could be bothered expending. Patches welcome. --Robert</p> 
 <p class="info">{{ profile.username }} is {% if profile.key == 0 %} <b>not</b>{% endif %} a keyholder.</p>
 <p class="info">{{ profile.username }} is {% if profile.adm == 0 %} <b>not</b>{% endif %} an administrator.</p>
+<p class="info">{{ profile.remote }} is {% if profile.remote == 0 %} <b>not</b>{% endif %} a remote member.</p>
 {% endblock %}

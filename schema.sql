@@ -11,7 +11,8 @@ create table member (
   github text,
   address text not null,
   key integer not null,
-  adm integer not null
+  adm integer not null,
+  remote integer not null
 );
 
 drop table if exists payment;

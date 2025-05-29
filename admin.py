@@ -59,7 +59,7 @@ def admin_profile():
     if request.method == 'GET':
         return render_template('admin_profile_edit.html', profile=Member(request.args['u']).get_profile())
     elif request.method == 'POST':
-        updatable = ['realname', 'nickname', 'email', 'twitter', 'irc', 'github', 'address']
+        updatable = ['realname', 'nickname', 'email', 'twitter', 'irc', 'github', 'address', 'key', 'adm', 'remote']
         update = {}
         for x in request.form:
             if x in updatable:
